@@ -14,11 +14,11 @@ class Nodo{
 		~Nodo();
 		void setdata(t);
 		void setnext(Nodo<t> *);
-		const t getdata() const;
+		const t getdata() ;
 		Nodo<t> *getnext();
-		void ShowAll() const;
-		bool Buscar(t) const;
-		int BuscarDir(t) const;
+		void ShowAll() ;
+		bool Buscar(t) ;
+		int BuscarDir(t) ;
 };
 
 template <typename t>
@@ -57,7 +57,7 @@ Nodo<t> * Nodo<t>::getnext() {
 	}
 
 template <typename t>
-void Nodo<t>::ShowAll() const{
+void Nodo<t>::ShowAll() {
 	Nodo<t> *aux = siguiente;
 	cout << *dato <<" ";
 	while(aux){
@@ -68,7 +68,7 @@ void Nodo<t>::ShowAll() const{
 }
 
 template <typename t>
-bool Nodo<t>::Buscar(t elemento) const{
+bool Nodo<t>::Buscar(t elemento) {
 	Nodo<t> *aux = siguiente;
 	bool bandera=true;
 
@@ -88,7 +88,7 @@ bool Nodo<t>::Buscar(t elemento) const{
 }
 
 template <typename t>
-int Nodo<t>::BuscarDir(t elemento) const{
+int Nodo<t>::BuscarDir(t elemento) {
 	Nodo<t> *aux = siguiente;
 	int ubicacion=1;
 
@@ -121,11 +121,11 @@ class Lista{
 		Lista(): inicio(NULL), fin(NULL), tam(0) {}
 		~Lista();
 		void agregar(t);
-		int gettam() const;
-		bool empty() const;
-		void Mostrar() const;
-		void Buscar(t) const;
-		void Eliminar() const;
+		int gettam() ;
+		bool empty() ;
+		void Mostrar() ;
+		void Buscar(t) ;
+		void Eliminar() ;
 };
 
 template<typename t>
@@ -155,22 +155,22 @@ void Lista<t>::agregar(t nuevo){
 }
 
 template<typename t>
-int Lista<t>::gettam() const { 
+int Lista<t>::gettam(){ 
 	return tam; }
 
 template<typename t>
-bool Lista<t>::empty() const{
+bool Lista<t>::empty() {
 	return (inicio == NULL);
 }
 
 template<typename t>
-void Lista<t>::Mostrar() const {
+void Lista<t>::Mostrar() {
 	cout<<"El contenido de la lista es el siguiente: "<<endl;
 	inicio->ShowAll(); 
 }
 
 template<typename t>
-void Lista<t>::Buscar(t elemento) const {
+void Lista<t>::Buscar(t elemento){
 	cout<<"Se encontro?: ";
 	if(inicio->Nodo<t>::Buscar(elemento)==1){
 		cout<<"Si se encontro "<<endl;
@@ -194,7 +194,7 @@ void Lista<t>::Buscar(t elemento) const {
 }
 
 template<typename t>
-void Lista<t>::Eliminar() const {
+void Lista<t>::Eliminar() {
 	fin->Nodo<t>::~Nodo();
 }
 
